@@ -1,0 +1,14 @@
+{
+  "name": "appbrew",
+  "owner": {
+    "name": "AppBrew Inc.",
+    "url": "https://github.com/appbrew"
+  },
+  "plugins": [
+    {
+      "name": "pr-review-harness",
+      "source": "./plugins/pr-review-harness",
+      "description": "PRレビューで人間が指摘し、実際に修正につながった知見だけを抽出し、Slackの投票を経て CLAUDE.md / Rules への反映PRにするまでを週次で回す2つのスキル"
+    }
+  ]
+}

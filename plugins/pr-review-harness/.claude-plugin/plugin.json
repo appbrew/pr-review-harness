@@ -1,0 +1,13 @@
+{
+  "name": "pr-review-harness",
+  "description": "PRレビューで人間が指摘し、実際に修正につながった知見だけを抽出し、Slackの投票を経て CLAUDE.md / Rules への反映PRにするまでを週次で回す2つのスキル",
+  "version": "0.1.0",
+  "author": {
+    "name": "AppBrew Inc.",
+    "url": "https://github.com/appbrew"
+  },
+  "homepage": "https://github.com/appbrew/pr-review-harness",
+  "repository": "https://github.com/appbrew/pr-review-harness",
+  "license": "MIT",
+  "keywords": ["code-review", "claude-code", "rules", "slack", "harness"]
+}
