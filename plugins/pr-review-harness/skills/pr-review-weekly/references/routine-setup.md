@@ -27,6 +27,27 @@ Connect your GitHub account before saving a routine that uses a GitHub repositor
 スケジュール実行に必要なのは clone だけなので、**組織オーナーの承認は要らない**（App の導入が要るのは、
 GitHub イベントで起動する Routine を作る場合）。
 
+**スキル2本を、対象リポジトリの `.claude/skills/` にコミットする。** Routine のセッションはプラグインを
+インストールしない。`/plugin install` で入れたプラグインも、リポジトリの `.claude/settings.json` の
+`enabledPlugins` に書いたプラグインも、クラウドには入らない。読み込まれるのは clone したリポジトリに
+コミットされたスキルなので、プラグインとして入れただけでは Routine からこのスキルが見えない
+（[What carries over from your setup](https://code.claude.com/docs/en/cloud-environments#what-carries-over-from-your-setup)）。
+下のプロンプトが `.claude/skills/` の SKILL.md を読むのはこのため。
+
+```
+git clone https://github.com/appbrew/pr-review-harness /tmp/pr-review-harness
+mkdir -p .claude/skills
+cp -R /tmp/pr-review-harness/plugins/pr-review-harness/skills/pr-review-extract \
+      /tmp/pr-review-harness/plugins/pr-review-harness/skills/pr-review-weekly \
+      .claude/skills/
+```
+
+コピーした `.claude/skills/pr-review-extract/references/github-slack-map.md` に自分のチームの行を足して、
+既定ブランチにマージする。Routine は既定ブランチを clone して始まるので、マージ前のスキルは読まれない。
+
+リポジトリにコミットしたスキルは、そのリポジトリで開いたローカルの Claude Code でも読み込まれる。
+プラグインと両方は入れない。変換表が2か所にでき、片方だけ直すとずれる。
+
 **Routine は作成者の個人アカウントに紐づく。** チームの共有資産ではないので、次の制約がある。
 
 - Slack への投稿もPR作成も**作成者の名義**になる

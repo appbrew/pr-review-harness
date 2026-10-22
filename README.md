@@ -52,6 +52,8 @@ Slack に1件1投稿で配信 → リアクション2票以上 → 反映PR
 `skills/pr-review-weekly/references/routine-setup.md` に、クラウドのスケジュール実行
 （Claude の Routine）で毎週自動実行するための設定値とプロンプトの雛形が入っています。
 `<owner>/<repo>`、`<配信チャンネル>`、`<CHANNEL_ID>` を自分の環境に置き換えてください。
+Routine のセッションにはプラグインが入らないので、Routine で動かすときは、スキル2本を対象リポジトリの
+`.claude/skills/` にコミットして使います。その手順も同じファイルにあります。
 
 ## 既知の弱点
 
