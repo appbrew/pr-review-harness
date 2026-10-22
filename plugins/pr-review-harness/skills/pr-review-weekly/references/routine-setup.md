@@ -154,8 +154,8 @@ SKILL.md の `gh api "repos/$REPO/..."` は
   優先して再利用**する。ファイル名や連番は使わない
 - **対象週は `YYYY-MM-DD〜YYYY-MM-DD` と両端を省略せずに書く**。週は月や年をまたぐ
 - **候補投稿には、元PRの Author と指摘したレビューアーの Slack メンションを入れる。**
-  GitHub login → メンバーIDの変換表は
-  `.claude/skills/pr-review-extract/references/github-slack-map.md`。
+  GitHub login → メンバーIDの変換表は、`pr-review-extract` の SKILL.md と同じディレクトリにある
+  `references/github-slack-map.md`。
   **表に無い login は推測でメンションせず** `@<login>` の平文で出す（別人に通知が飛ぶと
   通知を切られて投票が集まらなくなる）。サマリ投稿と見送り投稿にはメンションを入れない
 - **太字は `**...**` と書く。`*...*` と書かない。** Slack MCP は渡した文字列を Markdown と
